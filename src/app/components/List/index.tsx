@@ -1,3 +1,5 @@
+import { Divider } from "@nextui-org/divider";
+import AddTask from "../AddTask";
 
 
 const List = () => {
@@ -5,9 +7,9 @@ const List = () => {
 
   <div className="flex justify-center">
    <div className="w-1/2">
-    <div className="flex justify-between items-center">
-     <h1 className="font-light text-3xl">New task</h1>
-     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add</button>
+    <div  className="my-5 ">
+     <AddTask />
+     <Divider />
     </div>
     <ul className="list-disc">
      <li className="flex justify-between items-center py-2 border-b">
@@ -25,7 +27,7 @@ const List = () => {
     </ul>
    </div>
   </div>
- 
+
  )
 }
 
