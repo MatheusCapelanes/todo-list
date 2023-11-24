@@ -1,31 +1,21 @@
-import { Divider } from "@nextui-org/divider";
-import AddTask from "../AddTask";
+
+
+import { taskMock, TaskProps } from "@/app/mock/tasks";
+import { use, useState } from "react";
 
 
 const List = () => {
+ const [tasks, setTasks] = useState<TaskProps[]>(taskMock)
+
  return (
 
-  <div className="flex justify-center">
-   <div className="w-1/2">
-    <div  className="my-5 ">
-     <AddTask />
-     <Divider />
+  <div className="">
+   {tasks.map((task) => (
+    <div className="mt-2 flex w-1/2 m-auto ">
+     <input checked={task.completed} type="checkbox" id={task.id} className="mr-3" />
+     <h1 id={task.id}>{task.title}</h1>
     </div>
-    <ul className="list-disc">
-     <li className="flex justify-between items-center py-2 border-b">
-      <span className="text-xl">Task #1</span>
-      <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
-     </li>
-     <li className="flex justify-between items-center py-2 border-b">
-      <span className="text-xl">Task #2</span>
-      <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
-     </li>
-     <li className="flex justify-between items-center py-2 border-b">
-      <span className="text-xl">Task #3</span>
-      <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
-     </li>
-    </ul>
-   </div>
+   ))}
   </div>
 
  )
