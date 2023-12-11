@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@nextui-org/divider": "^2.0.25",
-    "next": "14.0.2",
+    "@reduxjs/toolkit": "^2.0.1",
+    "next": "^14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-redux": "^9.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",

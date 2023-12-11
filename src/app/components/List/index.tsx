@@ -1,18 +1,17 @@
-
-
-import { taskMock, TaskProps } from "@/app/mock/tasks";
-import { use, useState } from "react";
+import { useTask } from "@/redux/slice";
+import { useSelector } from "react-redux";
 
 
 const List = () => {
- const [tasks, setTasks] = useState<TaskProps[]>(taskMock)
+
+ const task = useSelector(useTask)
 
  return (
 
   <div className="">
-   {tasks.map((task) => (
+   {task.map((task) => (
     <div className="mt-2 flex w-1/2 m-auto ">
-     <input checked={task.completed} type="checkbox" id={task.id} className="mr-3" />
+     <input type="checkbox" id={task.id} className="mr-3" />
      <h1 id={task.id}>{task.title}</h1>
     </div>
    ))}
