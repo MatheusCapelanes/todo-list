@@ -1,4 +1,5 @@
 import { PayloadAction, createSlice} from '@reduxjs/toolkit';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface Tasks {
  id?: string;
@@ -16,7 +17,7 @@ const sliceTask = createSlice({
  initialState: initState,
  reducers: {
   addTask(state, { payload }: PayloadAction<string>) {
-   return [...state, { title: payload, completed: false, id: Math.random().toString() }]
+   return [...state, { title: payload, completed: false, id: uuidv4() }]
   }
 
  }
